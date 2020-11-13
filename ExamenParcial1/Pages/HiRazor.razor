@@ -1,0 +1,38 @@
+﻿@page "/hiRazor"
+
+<HeaderTop Title="Hello! :)" Subtitle="Let's say hello to all" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="input-group">
+            <input type="text" @bind="inVal"class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" @onclick="AddList">Lets say hi</button>
+                <a href="HiRazor2/{@list}" class="btn btn-primary">Go next</a>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <ul class="row list-group">
+            @foreach (var todo in list)
+            {
+                <li class="list-group-item col-md-12">@todo</li>
+            }
+        </ul>
+    </div>
+</div>
+
+@code {
+    public List<String> list = new List<String>();
+    private string inVal;
+
+    private void AddList()
+    {
+        if (!string.IsNullOrWhiteSpace(inVal))
+        {
+            list.Add(inVal);
+        }
+        // list.Add(value);
+    }
+}
+

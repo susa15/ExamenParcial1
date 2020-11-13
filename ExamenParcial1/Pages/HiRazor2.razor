@@ -1,0 +1,24 @@
+﻿@page "/hiRazor2"
+
+<HeaderTop Title="Next" Subtitle="This is my second component" />
+
+<div class="container mt-5">
+    <ul class="row list-group">
+        <li class="list-group-item col-md-12">Sin datos <span class="btn btn-danger float-right">Eliminar</span></li>
+        <li class="list-group-item col-md-12">Sin datos <span class="btn btn-danger float-right">Eliminar</span></li>
+        <li class="list-group-item col-md-12">Sin datos <span class="btn btn-danger float-right">Eliminar</span></li>
+        <li class="list-group-item col-md-12">Sin datos <span class="btn btn-danger float-right">Eliminar</span></li>
+    </ul>
+
+    <ul class="row list-group">
+        @foreach (var todo in list)
+        {
+            <li class="list-group-item col-md-12">@todo</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public List<String> list { get; set; }
+}

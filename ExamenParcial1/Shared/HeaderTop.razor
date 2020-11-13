@@ -1,0 +1,16 @@
+﻿<div class="row">
+    <div class="col-12 text-center pt-5 pb-5">
+        <h1 class="text-center">@Title</h1>
+        <h4 class="text-center">@Subtitle</h4>
+    </div>
+</div>
+
+@code {
+    // Demonstrates how a parent component can supply parameters
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string Subtitle { get; set; }
+    [Parameter]
+    public List<String> lista { get; set; }
+}
